@@ -33,7 +33,12 @@ export function renderTrim(view: HTMLElement, ctx: WizardCtx) {
 
     const times = document.createElement("div");
     times.className = "trim-times";
-    const render = () => { times.textContent = `In ${fmt(c.trimInSec)}  →  Out ${fmt(c.trimOutSec)}`; };
+    // Local live values for the readout only; the authoritative trim is committed
+    // to the store (via trimClip) on the slider "change" event — never mutate the
+    // project state object directly here.
+    let liveIn = c.trimInSec;
+    let liveOut = c.trimOutSec;
+    const render = () => { times.textContent = `In ${fmt(liveIn)}  →  Out ${fmt(liveOut)}`; };
     render();
 
     const start = document.createElement("input");
@@ -44,8 +49,8 @@ export function renderTrim(view: HTMLElement, ctx: WizardCtx) {
     end.value = String(c.trimOutSec);
     const commit = () => ctx.update((p) =>
       trimClip(p, c.id, parseFloat(start.value), parseFloat(end.value)));
-    start.addEventListener("input", () => { c.trimInSec = parseFloat(start.value); render(); });
-    end.addEventListener("input", () => { c.trimOutSec = parseFloat(end.value); render(); });
+    start.addEventListener("input", () => { liveIn = parseFloat(start.value); render(); });
+    end.addEventListener("input", () => { liveOut = parseFloat(end.value); render(); });
     start.addEventListener("change", commit);
     end.addEventListener("change", commit);
 
