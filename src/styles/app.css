@@ -38,3 +38,10 @@ body {
 .clip-row button { background: transparent; color: var(--fg); border: 1px solid var(--silver);
   border-radius: 8px; min-width: 44px; min-height: 44px; font-size: 1.1rem; }
 .file-input { display: none; }
+.trim-card { border: 1px solid var(--silver); border-radius: 12px; padding: 12px;
+  display: flex; flex-direction: column; gap: 8px; }
+.trim-card .row { display: flex; align-items: center; gap: 10px; }
+.trim-card .name { flex: 1; }
+.trim-card input[type=range] { width: 100%; }
+.trim-card .move button { min-width: 44px; min-height: 44px; }
+.trim-times { color: var(--silver); font-variant-numeric: tabular-nums; }
