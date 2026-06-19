@@ -1,0 +1,8 @@
+{
+  "landscape": [
+    { "id": "l1", "label": "Intro 1", "file": "assets/intros/landscape/intro1.mp4", "thumbnail": "assets/intros/landscape/intro1.jpg" }
+  ],
+  "portrait": [
+    { "id": "p1", "label": "Intro 1", "file": "assets/intros/portrait/intro1.mp4", "thumbnail": "assets/intros/portrait/intro1.jpg" }
+  ]
+}

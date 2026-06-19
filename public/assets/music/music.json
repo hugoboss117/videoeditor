@@ -1,0 +1,4 @@
+[
+  { "id": "none", "label": "No music (keep clip sound)", "file": "" },
+  { "id": "calm", "label": "Calm Acoustic", "file": "assets/music/calm.mp3" }
+]
