@@ -31,3 +31,10 @@ body {
 .intro-card.selected { border-color: var(--accent); }
 .intro-card img, .intro-card video { width: 100%; display: block; background: #000; }
 .intro-card .label { padding: 10px 12px; font-size: 1.1rem; }
+.clip-row { display: flex; align-items: center; gap: 12px; border: 1px solid var(--silver);
+  border-radius: 12px; padding: 10px 12px; }
+.clip-row .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clip-row .dur { color: var(--silver); }
+.clip-row button { background: transparent; color: var(--fg); border: 1px solid var(--silver);
+  border-radius: 8px; min-width: 44px; min-height: 44px; font-size: 1.1rem; }
+.file-input { display: none; }
